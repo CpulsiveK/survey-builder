@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  survey-backend:
+    image: survey-backend
+    container_name: survey-backend
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: on-failure
+    ports:
+      - "3004:3004"
+    env_file:
+      - .env
